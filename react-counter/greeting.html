@@ -15,14 +15,33 @@
       render() {
         return(
           <div>
-            <h1>Hello Jared Moats!</h1>
+            <h1>Hello {this.props.name}!</h1>
+          </div>
+        );
+      }
+    }
+
+    class GreetingBloc extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          helloBloc: "Hello Bloc!",
+          studentName: "Jared",
+        }
+      }
+
+      render() {
+        return(
+          <div>
+            <h1>{this.state.helloBloc}</h1>
+            <h2>I am {this.state.studentName} and I am your student.</h2>
           </div>
         );
       }
     }
 
     ReactDOM.render(
-      <Greeting name="Bloc Student"/>, document.getElementById('app')
+      <GreetingBloc />, document.getElementById('app')
     );
   </script>
 </body>
